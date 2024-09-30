@@ -1,2 +1,4 @@
 /public/OidcServiceWorker.js
 /public/OidcKeepAliveServiceWorker.json
+.cert/cert.pem
+.cert/key.pem

@@ -1,4 +1,4 @@
-import { TokenAutomaticRenewMode, TokenRenewMode } from '@axa-fr/react-oidc';
+import { OidcConfiguration, TokenAutomaticRenewMode, TokenRenewMode } from '@axa-fr/react-oidc';
 
 export const configurationIdentityServer = {
   client_id: 'interactive.public.short',
@@ -93,4 +93,14 @@ export const configurationGoogle = {
     client_secret: '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',
   },
   monitor_session: false,
+};
+
+export const paynetOidcConfiguration: OidcConfiguration = {
+  client_id: 'spa',
+  redirect_uri: `${window.location.origin}/auth-callback`,
+  scope: 'openid offline_access', // offline_access scope allow your client to retrieve the refresh_token
+  authority: 'https://test5-auth.paynet.com.tr',
+  service_worker_relative_url: '/OidcServiceWorker.js',
+  service_worker_only: false,
+  refresh_time_before_tokens_expiration_in_second: 60,
 };
